@@ -1,53 +1,49 @@
-/* Experience.css */
-
 .experience-section {
-  background-color: #ffffff ; /* Same black as the homepage left side */
-  color: #ffffff; /* White text */
-  min-height: 100vh;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  background-color: #ffffff;
+  color: #111827;
+  padding: 60px 16px;
+}
+
+.experience-section .container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #c084fc; /* Purple highlight similar to navbar title */
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7c3aed;
   text-align: center;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #c084fc;
-  display: inline-block;
-  padding-bottom: 0.5rem;
+  margin-bottom: 24px;
 }
 
 .experience-card {
-  background-color: #1a1a1a; /* Slightly lighter black for contrast */
+  background-color: #0f172a;
   border-left: 4px solid #c084fc;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(192, 132, 252, 0.2);
-  margin-top: 2rem;
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.35);
+  color: #e5e7eb;
 }
 
 .role-title {
-  font-size: 1.3rem;
-  color: #ffffff;
+  font-size: 1.15rem;
   font-weight: 600;
 }
 
 .date-location {
-  font-size: 0.95rem;
-  color: #aaaaaa;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 0.8rem;
 }
 
 .experience-list {
   list-style-type: disc;
-  padding-left: 1.5rem;
+  padding-left: 1.4rem;
 }
 
 .experience-list li {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.7;
-  margin-bottom: 0.5rem;
-  color: #e0e0e0;
+  margin-bottom: 0.4rem;
 }

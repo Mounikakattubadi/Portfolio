@@ -1,11 +1,15 @@
 import React, { useRef } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import {
-  FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaGithub
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaGithub,
 } from "react-icons/fa";
 import { SiMongodb, SiFigma, SiSelenium } from "react-icons/si";
 import "./About.css";
-import "./Skills.css";
 
 const About = () => {
   const skillsSectionRef = useRef(null);
@@ -20,58 +24,73 @@ const About = () => {
   };
 
   return (
-    <div className="about-section">
-      <div className="container">
-        {/* ABOUT CONTENT */}
+    <section className="about-section">
+      <div className="about-container">
         <div className="about-content">
           <span className="tagline">ABOUT ME</span>
           <h2 className="heading">Why hire me for your next project?</h2>
+
           <p className="description">
-            I'm a MERN Stack Developer with a strong foundation in full-stack development, skilled in both UI/UX design and scalable backend logic.
-            Whether it's building sleek front-ends or powerful backends with Node.js and MongoDB, I thrive on creating meaningful digital experiences.
-            I’m passionate about building clean, responsive, and scalable web applications using the MERN stack. I enjoy crafting beautiful user interfaces,
-            writing efficient backend logic, and solving real-world problems through elegant code.
-          </p>
-          <p className="description">
-            I'm constantly learning and exploring new technologies, with a strong focus on delivering value through user-centered design and functional development.
-            Currently pursuing a B.Tech in Computer Science at <strong>IIIT RGUKT RK Valley</strong>.
+            I’m a <strong className="highlight">MERN Stack Developer</strong> with a solid foundation
+            in full-stack development, combining clean{" "}
+            <strong className="highlight">UI/UX design</strong> with scalable{" "}
+            <strong className="highlight">backend engineering</strong>. I love turning ideas into
+            intuitive, high-performance web applications—whether that means crafting sleek,
+            responsive interfaces or building reliable backend systems with
+            <strong className="highlight"> Node.js</strong> and
+            <strong className="highlight"> MongoDB</strong>.
           </p>
 
-          {/* EDUCATION SECTION */}
-          <div className="education-section my-5">
+<p className="description">
+  I’m driven by learning, problem-solving, and creating digital experiences that feel 
+  effortless for users. I focus on writing{" "}
+  <strong className="highlight">clean, maintainable code</strong> and building{" "}
+  <strong className="highlight">user-centered interfaces</strong>. 
+  I graduated with a<strong className="highlight"> B.Tech in Computer Science</strong> from 
+  <strong className="highlight"> IIIT RGUKT RK Valley</strong> in 2024, where I developed a 
+  strong foundation in full-stack development and software engineering.
+</p>
+
+          <div className="education-section">
             <h2 className="section-title">Education</h2>
 
             <div className="education-entry">
               <h4>B.Tech in Computer Science and Engineering</h4>
-              <p><strong>IIIT, RK Valley, RGUKT</strong> | 2020 - 2024</p>
+              <p>
+                <strong>IIIT, RK Valley, RGUKT</strong> | 2020 - 2024
+              </p>
               <p>CGPA: 8.3</p>
             </div>
 
             <div className="education-entry">
               <h4>Pre-University Course (PUC) - M.P.C</h4>
-              <p><strong>IIIT, RK Valley, RGUKT</strong> | 2018 - 2020</p>
+              <p>
+                <strong>IIIT, RK Valley, RGUKT</strong> | 2018 - 2020
+              </p>
               <p>CGPA: 8.66</p>
             </div>
 
             <div className="education-entry">
               <h4>Secondary School Certificate (SSC)</h4>
-              <p><strong>GVEZPGHS, Dharmavaram</strong> | 2018</p>
+              <p>
+                <strong>GVEZPGHS, Dharmavaram</strong> | 2018
+              </p>
               <p>GPA: 10</p>
             </div>
           </div>
-
-          <div className="btn-group-custom">
-            <button onClick={scrollToSkills} className="btn-custom secondary">Skillset</button>
-          </div>
         </div>
 
-        {/* SKILLSET SECTION */}
-        <Container className="skills-container my-5 py-5">
+        {/* Skillset card */}
+        <Container className="skills-container">
           <Card className="skills-card shadow-lg p-4">
             <Row className="justify-content-center">
               <Col lg={10}>
                 <Row>
-                  <Col md={4} ref={skillsSectionRef} className="skills-side d-flex flex-column align-items-center">
+                  <Col
+                    md={12}
+                    ref={skillsSectionRef}
+                    className="skills-side d-flex flex-column align-items-center"
+                  >
                     <h2 className="section-title">Skillset</h2>
                     <div className="skill-list mt-3">
                       <h4 className="text-purple">Programming</h4>
@@ -98,7 +117,6 @@ const About = () => {
                       <FaJsSquare className="tech-icon js" />
                       <SiFigma className="tech-icon figma" />
                       <FaGithub className="tech-icon github" />
-                      <SiSelenium className="tech-icon selenium" />
                     </div>
                   </Col>
                 </Row>
@@ -106,48 +124,8 @@ const About = () => {
             </Row>
           </Card>
         </Container>
-
-        {/* SERVICES SECTION */}
-        <div className="services-section" id="services">
-          <span className="tagline">MY SERVICES</span>
-          <h2 className="heading">My Provided Features</h2>
-
-          <div className="row g-4">
-            <div className="col-md-4">
-              <div className="service-card">
-                <i className="bi bi-code-slash service-icon"></i>
-                <h5>Web Development</h5>
-                <p>
-                  Building modern websites using React, Node, MongoDB & Express with clean, customizable code.
-                </p>
-                <button className="btn-custom-sm link-style">See More</button>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="service-card highlighted">
-                <i className="bi bi-pencil service-icon"></i>
-                <h5>UI/UX Design</h5>
-                <p>
-                  Designing intuitive and visually pleasing interfaces with attention to usability and responsiveness.
-                </p>
-                <button className="btn-custom-sm link-style">See More</button>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="service-card">
-                <i className="bi bi-wordpress service-icon"></i>
-                <h5>CMS Integration</h5>
-                <p>
-                  Working knowledge of CMS platforms like WordPress for content-heavy projects or blog integration.
-                </p>
-                <button className="btn-custom-sm link-style">See More</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,7 +1,6 @@
 .contact-section {
   padding: 60px 0;
   background-color: #f7f9fc; /* Soft background color */
-  margin-top: 5%;
 }
 
 .contact-heading {
@@ -75,4 +74,18 @@
 
 .send-btn:active {
   transform: scale(0.98); /* Button click effect */
+}
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 40px 14px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .send-btn {
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -1,35 +1,96 @@
-.projects-compact {
-  max-width: 1200px; /* Increased width */
+.projects-section {
+  background: transparent; /* parent section-alt handles bg */
+}
+
+.projects-inner {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #fafafa;
-  font-family: 'Poppins', sans-serif;
-  margin-top: 5%;
+  padding: 50px 16px;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.compact-title {
+/* Header */
+
+.projects-header {
   text-align: left;
-  font-size: 2.8rem;
-  color: #2c3e50;
-  margin-bottom: 50px;
+  margin-bottom: 28px;
 }
 
-.compact-project {
-  background: #fff;
-  padding: 20px 30px;
-  margin-bottom: 40px;
-  border-left: 4px solid #3498db;
-  border-radius: 4px;
+.projects-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #f4e9ff;
+  color: #7c3aed;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.projects-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 10px 0 6px;
+}
+
+.projects-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  max-width: 520px;
+}
+
+/* Groups */
+
+.projects-group {
+  margin-top: 26px;
+}
+
+.projects-section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+/* Grid */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Project card */
+
+.project-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .project-name {
-  font-size: 1.8rem;
-  color: #3498db;
-  margin-bottom: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
 }
 
 .project-name a {
-  color: #3498db;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -37,61 +98,235 @@
   text-decoration: underline;
 }
 
+.project-type-badge {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.project-type-badge.industrial {
+  border-color: #22c55e;
+  color: #16a34a;
+  background: #ecfdf3;
+}
+
+.project-type-badge.academic {
+  border-color: #3b82f6;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.project-tagline {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 4px 0 2px;
+}
+
 .project-description {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 2px 0 8px;
 }
 
-.button-group {
+/* Buttons */
+
+.project-actions {
   display: flex;
-  justify-content: left;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 8px;
+  margin-top: 6px;
 }
 
-button {
-  background-color: #3498db;
-  color: white;
+.project-btn {
+  padding: 7px 14px;
+  border-radius: 999px;
   border: none;
-  padding: 10px 25px;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #7c3aed;
+  color: #ffffff;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
 }
 
-button:hover {
-  background-color: #2980b9;
+.project-btn.secondary {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d4d4d8;
 }
+
+.project-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.25);
+}
+
+.project-btn.secondary:hover {
+  background: #f9fafb;
+  box-shadow: none;
+}
+
+/* Info list shared with modal */
 
 .info-list {
-  margin-top: 10px;
+  margin-top: 8px;
   text-align: left;
   list-style: disc;
-  padding-left: 40px;
-  color: #555;
+  padding-left: 18px;
+  color: #4b5563;
+  font-size: 0.9rem;
 }
 
-hr {
-  margin: 30px auto;
+/* ------------ MODAL ------------ */
+
+.projects-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 16px;
+  backdrop-filter: blur(3px);
+}
+
+.projects-modal {
+  background: #ffffff;
+  max-width: 460px;
+  width: 100%;
+  border-radius: 18px;
+  padding: 20px 22px 18px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.4);
+  position: relative;
+  animation: projectsModalFade 0.2s ease-out;
+}
+
+/* Close button */
+
+.projects-modal-close {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  background: transparent;
   border: none;
-  border-top: 1px solid #ddd;
-  width: 60%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 0;
+  line-height: 1;
 }
 
-@media (max-width: 600px) {
-  .projects-compact {
-    margin-top: 18%;  }
+.projects-modal-close:hover {
+  color: #4b5563;
+}
 
-  .compact-title {
-    font-size: 2.5rem;
+/* Title + tagline */
+
+.projects-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+  padding-right: 28px;
+}
+
+.projects-modal-tagline {
+  font-size: 0.92rem;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+/* Tabs */
+
+.projects-modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.tab-btn.active {
+  color: #7c3aed;
+  border-bottom-color: #7c3aed;
+}
+
+/* Content */
+
+.projects-modal-body {
+  margin-top: 4px;
+}
+
+.modal-list {
+  max-height: 230px;
+  overflow-y: auto;
+  padding-left: 18px;
+  margin-top: 4px;
+}
+
+.modal-list li {
+  line-height: 1.7;
+}
+
+/* scrollbar */
+
+.modal-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-list::-webkit-scrollbar-thumb {
+  background: #c4c9d4;
+  border-radius: 999px;
+}
+
+/* animation */
+
+@keyframes projectsModalFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-inner {
+    padding: 40px 14px;
   }
 
-  .button-group {
-    flex-direction: column;
+  .projects-title {
+    font-size: 1.9rem;
   }
 
-  button {
-    width: 100%;
+  .project-card {
+    padding: 16px 14px;
+  }
+
+  .projects-modal {
+    max-width: 100%;
   }
 }
