@@ -1,30 +1,46 @@
-import React, { useRef } from "react";
-import emailjs from "emailjs-com";
+import React, { useRef, useState } from "react";
 import "./Contact.css";
 
 const Contact = () => {
   const formRef = useRef(null);
+  const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+    if (!formRef.current) return;
 
-    emailjs
-      .sendForm(
-        "service_lgce68j",      // service ID
-        "template_204xfaj",     // template ID
-        formRef.current,
-        "hm0fvLW0FDsMlkx8I"     // public key
-      )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          e.target.reset();
+    const formData = new FormData(formRef.current);
+
+    const payload = {
+      from_name: formData.get("from_name"),
+      from_email: formData.get("from_email"),
+      phone: formData.get("phone"),
+      message: formData.get("message"),
+    };
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          console.error(error.text);
-          alert("Failed to send message. Please try again.");
-        }
-      );
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send");
+      }
+
+      alert("Message sent successfully!");
+      formRef.current.reset();
+    } catch (err) {
+      console.error(err);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,7 +52,6 @@ const Contact = () => {
         </div>
 
         <form ref={formRef} onSubmit={sendEmail} className="contact-form">
-          
           {/* Name + Email */}
           <div className="form-row">
             <input
@@ -73,8 +88,8 @@ const Contact = () => {
           </div>
 
           {/* Send button */}
-          <button type="submit" className="send-btn">
-            Send Message
+          <button type="submit" className="send-btn" disabled={loading}>
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
