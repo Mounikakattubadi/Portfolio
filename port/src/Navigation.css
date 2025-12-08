@@ -94,3 +94,24 @@
   margin-left: 15px;
 }
 
+/* Navigation Links */
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff4a9c;
+  text-shadow: 0 0 6px #ff4a9c;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 991px) {
+  .nav-link {
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+}

@@ -1,32 +1,16 @@
-/* GLOBAL RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-  
-/* Wrapper */
 .home-wrapper {
   display: flex;
-  height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* Left Side with Triangle & Image */
+/* LEFT side */
 .home-left {
   flex: 1;
   background-color: #0f0f0f;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
 }
 
 .triangle-frame {
@@ -45,28 +29,42 @@ html, body {
   height: 100%;
   object-fit: cover;
   filter: grayscale(1);
+  transition: filter 0.3s ease;
 }
 
-/* Right Side with Text */
+.profile-img:hover {
+  filter: grayscale(0);
+}
+
+/* RIGHT side with diagonal background */
 .home-right {
   flex: 1;
   background-color: #fdfdff;
-  color: #111;
-  padding: 120px 80px 80px;
-  position: relative;
-  overflow-x: hidden;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 60px;
 }
 
+.text-wrapper {
+  max-width: 700px;
+  padding: 100px 40px;
+}
+
+/* Typography */
 .subtitle {
   font-size: 2rem;
   color: #ccc;
-  margin: 0 0 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .title {
   font-size: 3.5rem;
   font-weight: bold;
   color: #111;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
 }
 
 .title span {
@@ -77,6 +75,10 @@ html, body {
   font-size: 1.2rem;
   color: #555;
   margin: 15px 0 5px;
+  background: #eee6ff;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 
 .description {
@@ -99,7 +101,6 @@ html, body {
   cursor: pointer;
   border: none;
   transition: 0.3s ease;
-  background-color: #c084fc;
 }
 
 .btn-light {
@@ -112,151 +113,49 @@ html, body {
   background-color: #f2f2f2;
 }
 
-.btn-primary {
-  background-color: #6f42c1;
-  color: #fff;
+/* Section padding */
+.section-padding {
+  padding: 50px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.btn-primary:hover {
-  background-color: #5a34a2;
-}
-
-/* Long S-Shaped Scroll Down Arrow */
-.scroll-down {
-  text-align: center;
-  cursor: pointer;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 50px;
-}
-
-.s-arrow {
-  animation: bounce 2s infinite, float 3s ease-in-out infinite;
-}
-
-/* Bouncing and Floating Effect */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(15px);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* Added Arrow Image */
-.arrow-img {
-  width: 180px;
-  margin-top: 15px;
-  animation: bounceArrow 2s infinite;
-  height: 180px;
-}
-
-@keyframes bounceArrow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-}
-
-/* Social */
-.social-text {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.social-icons a {
-  margin-right: 15px;
-  font-size: 1rem;
-  color: #444;
-  text-decoration: none;
-}
-
-.social-icons a:hover {
-  color: #6f42c1;
-}
-
-/* Bottom Navigation inside home-right */
-.bottom-nav {
-  margin-top: 40px;
-}
-
-.bottom-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.bottom-nav li {
-  margin: 0;
-}
-
-.bottom-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.bottom-nav a:hover {
-  color: #6f42c1;
+.section-alt {
+  background-color: #f5f5f5;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .home-wrapper {
     flex-direction: column;
-    overflow-x: hidden;
   }
 
   .home-left,
   .home-right {
-    flex: none;
-    width: 100%;
     clip-path: none;
-    padding: 2rem;
-    margin-top: 18%;
+    width: 100%;
+    padding: 40px 20px;
   }
 
-  .home-right {
-    padding: 2rem;
-    overflow-x: hidden;
-  }
-
-  .triangle-frame {
-    width: 200px;
-    height: 250px;
+  .text-wrapper {
+    padding: 40px 20px;
   }
 
   .title {
     font-size: 2.5rem;
   }
 
-  .button-group {
-    flex-direction: column;
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
   }
 
-  .bottom-nav ul {
-    justify-content: center;
-    gap: 15px;
+  .description {
+    font-size: 0.9rem;
   }
 }

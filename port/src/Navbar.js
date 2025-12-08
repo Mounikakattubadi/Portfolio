@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
-import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa"; // Removed FaTwitter
+import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Navigation = ({ toggleMobileMenu, showMobileMenu }) => {
   return (
@@ -17,6 +17,12 @@ const Navigation = ({ toggleMobileMenu, showMobileMenu }) => {
       </div>
 
       <div className={`nav-items ${showMobileMenu ? "active" : ""}`}>
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/about" className="nav-link">About</Link>
+        <Link to="/experience" className="nav-link">Experience</Link>
+        <Link to="/projects" className="nav-link">Projects</Link>
+        <Link to="/contact" className="nav-link">Contact</Link>
+
         <a href="https://github.com/MounikaKattubadi" className="nav-icon" target="_blank" rel="noreferrer">
           <FaGithub />
         </a>
@@ -32,4 +38,3 @@ const Navigation = ({ toggleMobileMenu, showMobileMenu }) => {
 };
 
 export default Navigation;
-  
