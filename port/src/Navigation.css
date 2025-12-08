@@ -11,7 +11,7 @@
 .navbar-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 18px 18px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,15 +25,25 @@
 }
 
 .brand-link {
-  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.brand-logo {
   font-weight: 700;
+  font-size: 1.1rem;
   background: linear-gradient(45deg, #ff4a9c, #a855ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  letter-spacing: 0.5px;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f9fafb;
 }
 
 /* Desktop nav */

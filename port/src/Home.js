@@ -82,8 +82,9 @@ const Home = () => {
                 />
               </div>
               <div className="hero-photo-caption">
-                <span>Available for internships & roles</span>
+                <span>Seeking full-time roles • Open for freelance</span>
               </div>
+
             </div>
           </div>
         </div>

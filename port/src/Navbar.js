@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navigation.css";
 import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa";
 
-const Navigation = ({ toggleMobileMenu, showMobileMenu }) => {
+const Navbar = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   const location = useLocation();
   const navigate = useNavigate();
+
+  // ref for the whole navbar (so clicks inside don't close it)
+  const navRef = useRef(null);
+
+  const toggleMobileMenu = () => {
+    setShowMobileMenu((prev) => !prev);
+  };
+
+  // close menu when clicking anywhere outside the navbar
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        showMobileMenu &&
+        navRef.current &&
+        !navRef.current.contains(e.target)
+      ) {
+        setShowMobileMenu(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [showMobileMenu]);
 
   const scrollToSection = (id) => {
     const doScroll = () => {
@@ -22,27 +47,33 @@ const Navigation = ({ toggleMobileMenu, showMobileMenu }) => {
       setTimeout(doScroll, 120);
     }
 
-    if (showMobileMenu) toggleMobileMenu();
+    // close menu after clicking a link (on mobile)
+    setShowMobileMenu(false);
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navRef}>
       <div className="navbar-inner">
+        {/* BRAND */}
         <div className="navbar-brand">
-          <Link to="/" className="brand-link">
-            <span role="img" aria-label="sparkle">
-              ✨
-            </span>{" "}
-            Mounika&apos;s Portfolio
+          <Link
+            to="/"
+            className="brand-link"
+            onClick={() => scrollToSection("top")}
+          >
+            <span className="brand-logo">&lt;MK /&gt;</span>
+            <span className="brand-name">Mounika Kattubadi</span>
           </Link>
         </div>
 
+        {/* Hamburger Icon */}
         <div className="menu-toggle" onClick={toggleMobileMenu}>
           <div className="bar" />
           <div className="bar" />
           <div className="bar" />
         </div>
 
+        {/* Menu Items */}
         <div className={`nav-items ${showMobileMenu ? "active" : ""}`}>
           <button
             className="nav-link as-button"
@@ -105,4 +136,4 @@ const Navigation = ({ toggleMobileMenu, showMobileMenu }) => {
   );
 };
 
-export default Navigation;
+export default Navbar;
