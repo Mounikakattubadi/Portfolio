@@ -41,15 +41,15 @@ const About = () => {
             <strong className="highlight"> MongoDB</strong>.
           </p>
 
-<p className="description">
-  I’m driven by learning, problem-solving, and creating digital experiences that feel 
-  effortless for users. I focus on writing{" "}
-  <strong className="highlight">clean, maintainable code</strong> and building{" "}
-  <strong className="highlight">user-centered interfaces</strong>. 
-  I graduated with a<strong className="highlight"> B.Tech in Computer Science</strong> from 
-  <strong className="highlight"> IIIT RGUKT RK Valley</strong> in 2024, where I developed a 
-  strong foundation in full-stack development and software engineering.
-</p>
+          <p className="description">
+            I’m driven by learning, problem-solving, and creating digital experiences that feel
+            effortless for users. I focus on writing{" "}
+            <strong className="highlight">clean, maintainable code</strong> and building{" "}
+            <strong className="highlight">user-centered interfaces</strong>.
+            I graduated with a<strong className="highlight"> B.Tech in Computer Science</strong> from
+            <strong className="highlight"> IIIT RGUKT RK Valley</strong> in 2024, where I developed a
+            strong foundation in full-stack development and software engineering.
+          </p>
 
           <div className="education-section">
             <h2 className="section-title">Education</h2>
@@ -96,7 +96,6 @@ const About = () => {
                       <h4 className="text-purple">Programming</h4>
                       <p>HTML • CSS • JavaScript • SQL • MongoDB • Python</p>
                       <p>Concepts: Data Structures and Algorithms</p>
-                      <p>Testing: Selenium</p>
 
                       <h4 className="text-purple">Design</h4>
                       <p>Figma • Canva • Adobe XD</p>
@@ -105,7 +104,7 @@ const About = () => {
                       <p>Bootstrap • React.js • Node.js • jQuery</p>
 
                       <h4 className="text-purple">Tools/Platforms</h4>
-                      <p>Git • GitHub</p>
+                      <p>Git • GitHub  • Hostinger</p>
                     </div>
 
                     <div className="tech-icons mt-4">
