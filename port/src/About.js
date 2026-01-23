@@ -103,8 +103,8 @@ const About = () => {
 
                       <h4 className="text-purple">Frameworks</h4>
                       <p>
-                        Bootstrap • React.js • React Native  • Next.js • Vue.js • Vite
-                        Node.js • jQuery • Tailwind CSS
+                        Bootstrap • React.js • React Native • Next.js • Vue.js • Vite
+                        • Node.js • jQuery • Tailwind CSS
                       </p>
 
                       <h4 className="text-purple">Tools/Platforms</h4>
