@@ -93,19 +93,25 @@ const About = () => {
                   >
                     <h2 className="section-title">Skillset</h2>
                     <div className="skill-list mt-3">
+
                       <h4 className="text-purple">Programming</h4>
-                      <p>HTML • CSS • JavaScript • SQL • MongoDB • Python</p>
+                      <p>HTML • CSS • JavaScript (ES6) • TypeScript • SQL • MongoDB • Python</p>
                       <p>Concepts: Data Structures and Algorithms</p>
 
                       <h4 className="text-purple">Design</h4>
                       <p>Figma • Canva • Adobe XD</p>
 
                       <h4 className="text-purple">Frameworks</h4>
-                      <p>Bootstrap • React.js • Node.js • jQuery • Typescript • Next Js</p>
+                      <p>
+                        Bootstrap • React.js • React Native  • Next.js • Vue.js • Vite
+                        Node.js • jQuery • Tailwind CSS
+                      </p>
 
                       <h4 className="text-purple">Tools/Platforms</h4>
-                      <p>Git • GitHub  • Hostinger</p>
+                      <p>Git • GitHub • CI/CD Pipelines • Hostinger</p>
+
                     </div>
+
 
                     <div className="tech-icons mt-4">
                       <FaReact className="tech-icon react" />
