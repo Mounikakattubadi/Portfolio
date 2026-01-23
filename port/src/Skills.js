@@ -54,7 +54,7 @@ const Skills = () => {
                         <p>Figma • Canva • Adobe XD</p>
 
                         <h4 className="text-purple">Frameworks</h4>
-                        <p>Bootstrap • React.js • Node.js • jQuery • TypeScrpit</p>
+                        <p>Bootstrap • React.js • Node.js • jQuery • TypeScrpit • Thailwindcss</p>
 
                         <h4 className="text-purple">Tools/Platforms</h4>
                         <p>Git • GitHub</p>
