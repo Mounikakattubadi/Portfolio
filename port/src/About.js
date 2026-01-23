@@ -101,7 +101,7 @@ const About = () => {
                       <p>Figma • Canva • Adobe XD</p>
 
                       <h4 className="text-purple">Frameworks</h4>
-                      <p>Bootstrap • React.js • Node.js • jQuery</p>
+                      <p>Bootstrap • React.js • Node.js • jQuery • Typescript • Next Js</p>
 
                       <h4 className="text-purple">Tools/Platforms</h4>
                       <p>Git • GitHub  • Hostinger</p>
