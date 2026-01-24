@@ -29,10 +29,6 @@ const Home = () => {
               I build <span>clean</span>, scalable web apps.
             </h1>
 
-            <p className="hero-tagline">
-              Aspiring Software Engineer · MERN Stack Developer
-            </p>
-
             <p className="hero-description">
               Passionate about crafting intuitive, responsive web applications
               that solve real-world problems. I enjoy building elegant UIs in{" "}
