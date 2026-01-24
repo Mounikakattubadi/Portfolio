@@ -31,15 +31,13 @@ const About = () => {
           <h2 className="heading">Why hire me for your next project?</h2>
 
           <p className="description">
-            I’m a <strong className="highlight">MERN Stack Developer</strong> with a solid foundation
-            in full-stack development, combining clean{" "}
-            <strong className="highlight">UI/UX design</strong> with scalable{" "}
-            <strong className="highlight">backend engineering</strong>. I love turning ideas into
-            intuitive, high-performance web applications—whether that means crafting sleek,
-            responsive interfaces or building reliable backend systems with
-            <strong className="highlight"> Node.js</strong> and
-            <strong className="highlight"> MongoDB</strong>.
+            I’m a <strong className="highlight">Full-Stack Developer</strong> with a passion for building
+            intuitive and high-performance web applications. I specialize in <strong className="highlight">React.js</strong>,
+            <strong className="highlight">Node.js</strong>, and <strong className="highlight">MongoDB</strong>,
+            crafting clean <strong className="highlight">UI/UX</strong> designs and robust backend systems.
+            Quick learner and strong communicator, I enjoy turning ideas into seamless, production-ready apps.
           </p>
+
 
           <p className="description">
             I’m driven by learning, problem-solving, and creating digital experiences that feel

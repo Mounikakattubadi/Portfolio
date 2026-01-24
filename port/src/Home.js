@@ -22,18 +22,18 @@ const Home = () => {
       <section id="top" className="hero-section">
         <div className="hero-inner">
           {/* TEXT SIDE */}
+          {/* TEXT SIDE */}
           <div className="hero-text">
             <span className="hero-badge">Hi, I’m Mounika 👋</span>
             <h2 className="hero-subtitle">Full-Stack Web Developer</h2>
             <h1 className="hero-title">
-              I build <span>clean</span>, scalable web apps.
+              I build <span>scalable</span> and <span>intuitive</span> web applications
             </h1>
 
             <p className="hero-description">
-              Passionate about crafting intuitive, responsive web applications
-              that solve real-world problems. I enjoy building elegant UIs in{" "}
-              <strong>React</strong>, robust APIs with <strong>Node.js</strong>,
-              and data layers powered by <strong>MongoDB</strong>.
+              I am a Full-Stack Web Developer passionate about creating elegant and responsive web applications.
+              I design intuitive <strong>UI/UX</strong> and build robust backend systems, delivering seamless user experiences.
+              Quick learner, strong communicator, and always eager to implement new technologies and workflows.
             </p>
 
             <div className="hero-actions">
@@ -45,7 +45,6 @@ const Home = () => {
                 <button className="hero-btn primary">View Resume</button>
               </a>
 
-              {/* 🔽 changed this part */}
               <button
                 type="button"
                 className="hero-btn ghost"
@@ -58,7 +57,7 @@ const Home = () => {
             <div className="hero-meta">
               <div className="hero-meta-item">
                 <span className="hero-meta-label">Focus</span>
-                <span className="hero-meta-value">MERN Stack · UI/UX</span>
+                <span className="hero-meta-value">Full-Stack Development </span>
               </div>
               <div className="hero-meta-item">
                 <span className="hero-meta-label">Based in</span>
@@ -66,6 +65,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+
 
           {/* IMAGE SIDE */}
           <div className="hero-photo-wrapper">
